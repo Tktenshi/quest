@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans:400,700|Neucha&subset=cyrillic');
+
+html, body {
+    font: 17px 'Droid Sans', Arial, sans-serif;
+    height: 100%;
+}
+
+body {
+    background: fixed url('../img/galaxy0.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    -webkit-transition-duration: 2s; /* Safari */
+    transition-duration: 2s;
+}
