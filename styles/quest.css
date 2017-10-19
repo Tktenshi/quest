@@ -9,6 +9,35 @@ body {
     background: fixed url('../img/galaxy0.jpg') no-repeat center center;
     background-size: cover;
     display: flex;
-    -webkit-transition-duration: 2s; /* Safari */
+    -webkit-transition-duration: 2s;
     transition-duration: 2s;
+}
+
+.container {
+    margin: auto;
+}
+
+.inp-password {
+
+}
+
+.btn-send {
+    /*border-radius: 7px;*/
+    /*-webkit-transition-duration: 0.4s;*/
+    /*transition-duration: 0.4s;*/
+    /*box-shadow: 0 9px 13px -9px black;*/
+    /*margin: 7px 10px;*/
+    /*padding: 2px 21px;*/
+    /*outline: none;*/
+    /*background: linear-gradient(to bottom, !*#9370DB,*! #7B68EE, #6A5ACD, #483D8B);*/
+    /*color: #E6E6FF;*/
+    /*border: 1px solid #555555;*/
+}
+
+.btn-send:hover {
+    /*box-shadow: 0 9px 19px -5px black;*/
+}
+
+.btn-send:active {
+    /*background: linear-gradient(to top, !*#9370DB,*! #7B68EE, #6A5ACD, #483D8B);*/
 }
