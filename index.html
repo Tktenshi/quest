@@ -2,14 +2,31 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Quest</title>
+    <title>Cats Quest</title>
     <link href="styles/quest.css" rel="stylesheet">
 </head>
 <body id="quest">
+<a rel="simplebox" href="img/place.jpg"><span class="rand-img"></span></a>
 <div class="container">
-    <input class="inp-password" type="text" placeholder="Введите пароль" tabindex="1" autofocus>
-    <button class="btn-send" tabindex="2">Отправить</button>
+    <input class="inp-password quest_el" type="text" placeholder="Введите пароль" tabindex="1" autofocus>
+    <button class="btn-send quest_el" tabindex="2">Отправить</button>
 </div>
-<script src="quest.js"></script>
+
+<script type="text/javascript" src="galery/simplebox_util.js"></script>
+<script src="scripts/quest.js"></script>
+<script type="text/javascript">
+    (function () {
+        var boxes = [], els, i, l;
+        if (document.querySelectorAll) {
+            els = document.querySelectorAll('a[rel=simplebox]');
+            Box.getStyles('simplebox_css', 'galery/simplebox.css');
+            Box.getScripts('simplebox_js', 'galery/simplebox.js', function () {
+                simplebox.init();
+                for (i = 0, l = els.length; i < l; ++i)
+                    simplebox.start(els[i]);
+                simplebox.start('a[rel=simplebox_group]');
+            });
+        }
+    })();</script>
 </body>
 </html>
