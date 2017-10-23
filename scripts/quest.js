@@ -1,6 +1,14 @@
 var an = "JUQwJUJFJUQxJTgyJUQwJUIyJUQwJUI1JUQxJTgy";
 var main = document.getElementById("quest");
 var i = 1;
+var imgCache = [];
+
+for (var k = 0; k < 5; k++) {
+    imgCache.push(new Image());
+    imgCache[k].src = 'img/galaxy' + k + '.jpg';
+}
+
+document.getElementsByClassName("quest_el audio")[0].volume = 0.5;
 
 setInterval(function () {
     main.style.backgroundImage = "url('img/galaxy" + i + ".jpg')";
@@ -29,10 +37,11 @@ setTimeout(function () {
         img.style.top = t + "px";
         img.style.backgroundPosition = p + "px 0";
     }, 600); //600
-}, 8000);
+}, 8000); //8000
 
 img.onclick = function () {
     clearInterval(timerImg);
+    document.querySelector('.hidedImage').click();
 };
 
 var inpPas = document.getElementsByClassName("inp-password")[0];
@@ -52,6 +61,6 @@ document.getElementsByClassName("btn-send")[0].onclick = function () {
     }
     else {
         console.log(window.location.hostname);
-        // document.location.href = "http://www.site.ru";
+        window.location.href = "/ordeal.html";
     }
 };

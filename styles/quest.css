@@ -12,6 +12,9 @@ body {
     -webkit-transition-duration: 2s;
     transition-duration: 2s;
     /*animation: galaxy 35s infinite;*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .container {
@@ -79,6 +82,20 @@ body {
     color: rgba(106, 90, 205, 0.8);
     font-weight: normal;
     text-transform: none;
+}
+
+.audio {
+    text-align: center;
+    border-radius: 0;
+    position: absolute;
+    top: calc(100%);
+    left: calc(50%);
+    transform: translate(-50%, -150%);
+    opacity: 0.1;
+}
+
+.audio:hover {
+    opacity: 0.8;
 }
 
 .inp-password::-moz-placeholder {

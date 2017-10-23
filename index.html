@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <title>Cats Quest</title>
     <link href="styles/quest.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 <body id="quest">
-<a rel="simplebox" href="img/place.jpg"><span class="rand-img"></span></a>
+<a class="hidedImage" rel="simplebox" href="img/place.jpg" style="display: none"></a>
+<div class="rand-img"></div>
+<div class="audio">
+    <audio controls preload="auto" class="quest_el audio">
+        <source src="audio/NeverGonnaCatchMe.mp3">
+        <source src="audio/NeverGonnaCatchMe.wav">
+        <p>Ваш браузер не поддерживает аудио</p>
+        <a href="audio/NeverGonnaCatchMe.mp3">Название</a>,
+        <a href="audio/NeverGonnaCatchMe.wav">Название</a>
+    </audio>
+</div>
 <div class="container">
     <input class="inp-password quest_el" type="text" placeholder="Введите пароль" tabindex="1" autofocus>
     <button class="btn-send quest_el" tabindex="2">Отправить</button>
 </div>
-
 <script type="text/javascript" src="galery/simplebox_util.js"></script>
 <script src="scripts/quest.js"></script>
 <script type="text/javascript">
