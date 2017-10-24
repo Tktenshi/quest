@@ -1,0 +1,21 @@
+:root {
+    --img-size: calc(512px / 3.4);
+}
+
+.space-img {
+    width: var(--img-size);
+    height: var(--img-size);
+}
+
+.space-img--big{
+    width: calc(150px * 2);
+    height: calc(150px * 2);
+}
+
+.container {
+    width: calc(var(--img-size) * 6);
+    height: calc(var(--img-size) * 5);
+    border: 3px solid white;
+    position: relative;
+    border-radius: 50%;
+}

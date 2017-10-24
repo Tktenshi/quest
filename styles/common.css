@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Neucha&subset=cyrillic');
+
+html, body {
+    font: 25px 'Neucha', cursive;
+    height: 100%;
+}
+
+body {
+    background: fixed url('../img/galaxy0.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    -webkit-transition-duration: 2s;
+    transition-duration: 2s;
+    /*animation: galaxy 35s infinite;*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.container {
+    margin: auto;
+}
+
+.rand-img {
+    display: none;
+    position: absolute;
+    background: url('../img/sprite_cat2.png') no-repeat;
+    background-position: -50px 0;
+    background-size: cover;
+    height: 2rem;
+    width: 2rem;
+    transition: left 0.4s, top 0.4s;
+    left: calc(50% - 2rem);
+    top: calc(30% - 2em);
+}
+
+.rand-img:hover {
+    cursor: pointer;
+}
+
+.quest_el {
+    font: 25px 'Neucha', cursive;
+    border-radius: 10px;
+    box-shadow: 0 9px 13px -9px black;
+    border: 2px solid #7B68EE;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.quest_el:hover {
+    box-shadow: 0 9px 19px -5px black;
+}
+
+.inp-password {
+    color: #6A5ACD;
+    padding: 4px 0;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.inp-password:focus {
+    outline: none;
+}
+
+.btn-send {
+    padding: 4px 21px;
+    outline: none;
+    background: linear-gradient(to bottom, /*#9370DB,*/ #7B68EE, #6A5ACD, #483D8B);
+    color: rgba(250, 250, 250, 0.85);
+    /*text-shadow: rgba(250, 250, 250, 1) 0 0 2px;*/
+    /*color: #E6E6FF;*/
+    /*border: 1px solid #555555;*/
+}
+
+.btn-send:active {
+    background: linear-gradient(to top, /*#9370DB,*/ #7B68EE, #6A5ACD, #483D8B);
+    /*background: linear-gradient(to top, !*#9370DB,*! #7B68EE, #6A5ACD, #483D8B);*/
+}
+
+.inp-password::-webkit-input-placeholder {
+    color: rgba(106, 90, 205, 0.8);
+    font-weight: normal;
+    text-transform: none;
+}
+
+.audio {
+    text-align: center;
+    border-radius: 0;
+    position: absolute;
+    top: calc(100%);
+    left: calc(50%);
+    transform: translate(-50%, -150%);
+    opacity: 0.1;
+}
+
+.audio:hover {
+    opacity: 0.8;
+}
+
+.inp-password::-moz-placeholder {
+    color: rgba(106, 90, 205, 0.8);
+    font-weight: normal;
+    text-transform: none;
+}
+
+.inp-password:-moz-placeholder {
+    color: rgba(106, 90, 205, 0.8);
+    font-weight: normal;
+    text-transform: none;
+}
+
+.inp-password:-ms-input-placeholder {
+    color: rgba(106, 90, 205, 0.8);
+    font-weight: normal;
+    text-transform: none;
+}
+
+/*@keyframes galaxy {*/
+/*0%, 14.5%, 20.2% {background-image: url('../img/galaxy0.jpg');}*/
+
+/*34.45%, 40.15% {background-image: url('../img/galaxy1.jpg');}*/
+
+/*54.4%, 60.1% {background-image: url('../img/galaxy2.jpg');}*/
+
+/*65.8%, 80.05% {background-image: url('../img/galaxy3.jpg');}*/
+
+/*85.75%, 100% {background-image: url('../img/galaxy4.jpg');}*/
+/*}*/
+
+.inp-password--error {
+    -webkit-animation: error .3s steps(1) 2;
+    animation: error .3s steps(1) 2;
+}
+
+@keyframes error {
+    25%, 45% {
+        border-color: red;
+        box-shadow: 0 9px 13px -9px red;
+        color: red;
+    }
+}
