@@ -1,25 +1,6 @@
-var an = "JUQwJUJFJUQxJTgyJUQwJUIyJUQwJUI1JUQxJTgy";
 var main = document.getElementById("quest");
-// var i = 1;
-// var imgCache = [];
-//
-// for (var k = 0; k < 5; k++) {
-//     imgCache.push(new Image());
-//     imgCache[k].src = 'img/galaxy' + k + '.jpg';
-// }
-
 document.getElementsByClassName("quest_el audio")[0].volume = 0.5;
-
-// setInterval(function () {
-//     main.style.backgroundImage = "url('img/galaxy" + i + ".jpg')";
-//     i++;
-//     if (i === 5) i = 0;
-// }, 7000);
-
-//// // через x сек остановить повторы
-//// setTimeout(function () {
-////     clearInterval(timerId);
-//// }, 80000);
+var an = "JUQwJUJFJUQxJTgyJUQwJUIyJUQwJUI1JUQxJTgy";
 
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -46,10 +27,6 @@ img.onclick = function () {
 
 var inpPas = document.getElementsByClassName("inp-password")[0];
 
-function utoa(str) {
-    return btoa(encodeURIComponent(str));
-}
-
 document.getElementsByClassName("btn-send")[0].onclick = function () {
     if (utoa(inpPas.value) !== an) {
         inpPas.classList.add("inp-password--error");
@@ -60,7 +37,6 @@ document.getElementsByClassName("btn-send")[0].onclick = function () {
         }, 600); //600
     }
     else {
-        console.log(window.location.hostname);
         window.location.href = "/ordeal.html";
     }
 };

@@ -1,21 +1,91 @@
 :root {
-    --img-size: calc(512px / 3.4);
+    --img-size: calc(512px / 3.6);
+    --gif-size: calc(150px * 2);
+}
+
+body {
+    flex-direction: column;
+    align-items: center;
+}
+
+.space-container {
+    width: calc(var(--img-size) * 5);
+    height: calc(var(--img-size) * 5);
+    margin: auto calc(var(--img-size) / 2);
+    /*border: 2px solid white;*/
+    position: relative;
+    /*border-radius: 50%;*/
+    display: flex;
+}
+
+.space-exercise {
+    margin: auto;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.input-container {
+    margin: 5px;
+    opacity: 0.3;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.input-container:hover {
+    opacity: 0.9;
+}
+
+.opacity {
+    opacity: 0.9;
+}
+
+.hide {
+    display: none;
+}
+
+.container-gif {
+    width: var(--gif-size);
+    height: var(--gif-size);
+    margin: auto;
 }
 
 .space-img {
     width: var(--img-size);
     height: var(--img-size);
+    position: absolute;
+    opacity: 0.9;
+    /*transform: translate(-50%, -50%);*/
+    left: 40%;
+    top: 40%;
 }
 
-.space-img--big{
-    width: calc(150px * 2);
-    height: calc(150px * 2);
+.space-img--big {
+    background: url('../img/space/fly0.gif') no-repeat center center;
+    background-size: cover;
+    width: var(--gif-size);
+    height: var(--gif-size);
+    -webkit-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    position: absolute;
 }
 
-.container {
-    width: calc(var(--img-size) * 6);
-    height: calc(var(--img-size) * 5);
-    border: 3px solid white;
-    position: relative;
-    border-radius: 50%;
+.space-img--big-eggs {
+    opacity: 0.01;
+    background-image: url('../img/space/fly1.gif');
+}
+
+.container-gif:hover .space-img--big-eggs {
+    opacity: 1;
+}
+
+.btn-send {
+    padding: 1px 21px;
+    margin: 0 10px;
+}
+
+.inp-password {
+    padding: 1px 0;
+    width: 30px;
+    margin: 0;
 }

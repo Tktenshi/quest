@@ -11,3 +11,7 @@ setInterval(function () {
     i++;
     if (i === 5) i = 0;
 }, 7000);
+
+function utoa(str) {
+    return btoa(encodeURIComponent(str));
+}
