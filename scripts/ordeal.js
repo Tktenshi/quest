@@ -4,16 +4,16 @@ var arrImg = document.getElementsByClassName("space-img");
 var imgCount = 12;
 var angle = 360 / imgCount;
 var arrSpCont = document.getElementsByClassName("space-container");
-var contSize = changeImgContSize(340);
+var contSize = changeImgContSize(13.6);   //340px
 var ke = "ODc1";
-var step = 32;
+var step = 1.28;    //32
 
 function changeImgContSize(size) {
     contSize = size;
-    arrSpCont[0].style.width = size * 2 + "px";
-    arrSpCont[1].style.width = size * 2 + "px";
-    arrSpCont[0].style.height = size * 2 + "px";
-    arrSpCont[1].style.height = size * 2 + "px";
+    arrSpCont[0].style.width = size * 2 + "rem";
+    arrSpCont[1].style.width = size * 2 + "rem";
+    arrSpCont[0].style.height = size * 2 + "rem";
+    arrSpCont[1].style.height = size * 2 + "rem";
     return size;
 }
 
@@ -23,9 +23,9 @@ function positioned(start, oval) {
     var act = oval ? 1 : 0;
 
     for (var l = 0; l < imgCount; l++) {
-        arrImg[start + l].style.transform = "rotate(" + l * angle + "deg) translate(" + (contSize + step * m) + "px, " + 0 + "px) rotate(-" + l * angle + "deg)";
+        arrImg[start + l].style.transform = "rotate(" + l * angle + "deg) translate(" + (contSize + step * m) + "rem) rotate(-" + l * angle + "deg)";
         if (oval) {
-            arrImg[start + l].style.setProperty('--img-size', (512 / 4) + 'px');
+            arrImg[start + l].style.setProperty('--img-size', 5.12 + 'rem');   //(512 / 4) + 'px'
             arrImg[start + l].style.top = "35%";
             arrImg[start + l].style.left = "35%";
         }
@@ -68,10 +68,12 @@ btnSend.onclick = function () {
 };
 
 for (var z = 0; z < arrInpPas.length - 1; z++) {
-    arrInpPas[z].onkeyup = function () {
+	(function(z){
+		arrInpPas[z].onkeyup = function () {
         if (this.value.length === 1)
-            arrInpPas[this.tabIndex].focus()
-    };
+            arrInpPas[z+1].focus()
+        };
+	})(z)
 }
 
 arrInpPas[arrInpPas.length - 1].onkeyup = function () {
@@ -86,7 +88,7 @@ contGif.onclick = function (e) {
     // console.log(x + 'x' + y);
     if (x > 74 && x < 122 && y > 207 && y < 240) {
         arrSpCont[1].classList.remove("hide");
-        changeImgContSize(240);
+        changeImgContSize(9.6);     //240
         positioned(0, true);
         positioned(12, true);
         contGif.onclick = function () {
@@ -112,8 +114,9 @@ function turnOnFind() {
             if (x > x1 && x < x2 && y > y1 && y < y2) {
                 el1.style.borderRadius = el2.style.borderRadius = "50%";
                 el1.style.boxShadow = el2.style.boxShadow = "0px 0px 31px 16px white";
-                // count++;
-                // if (count === 3) allFind();
+				 count++;
+                 if (count === 3) allFind();
+				el1.onclick = el2.onclick = function (e) {}
             }
         };
     }
