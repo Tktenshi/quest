@@ -24,10 +24,16 @@ function positioned(start, oval) {
 
     for (var l = 0; l < imgCount; l++) {
         arrImg[start + l].style.transform = "rotate(" + l * angle + "deg) translate(" + (contSize + step * m) + "rem) rotate(-" + l * angle + "deg)";
+        //arrImg[start + l].style.top = "ФОРМУЛА";
+        //arrImg[start + l].style.left = "ФОРМУЛА";
         if (oval) {
             arrImg[start + l].style.setProperty('--img-size', 5.12 + 'rem');   //(512 / 4) + 'px'
             arrImg[start + l].style.top = "35%";
             arrImg[start + l].style.left = "35%";
+        }
+        else{
+            arrImg[start + l].style.top = "39%";
+            arrImg[start + l].style.left = "39%";
         }
         m += act;
         if (m === 0 || m === 3) act = -act;
@@ -122,7 +128,9 @@ function turnOnFind() {
     }
 
     function allFind() {
-        console.log("546");
+        arrSpCont[1].classList.add("hide");
+        changeImgContSize(13.6);
+        positioned();
     }
 }
 
