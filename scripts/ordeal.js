@@ -71,13 +71,12 @@ btnSend.onclick = function () {
         }, 600); //600
     }
     else {
-        custAlert.classList.remove("hide");
-        contAlert.classList.remove("hide");
-        var custAlertArr = custAlert.children;
-        custAlertArr[0].innerHTML = "Всё верно! Вы молодцы! Запомните введённые цифры";
-        // bootbox.alert("sgsrgrs", function () {
-        //     console.log("Ура!");
-        // })
+
+        var btn_text = "Перейти к следующему испытанию";
+        var message = "Всё верно! Вы молодцы! Запомните введённые цифры";
+        myAlert(message, btn_text, function () {
+            console.log("Ура!")
+        });
         // window.location.href = "/ordeal.html";
     }
 };
