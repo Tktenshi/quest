@@ -1,5 +1,8 @@
 var main = document.getElementById("space");
 
+var custAlert = document.getElementsByClassName("cust-alert")[0];
+var contAlert = document.getElementsByClassName("cont-alert")[0];
+
 var arrImg = document.getElementsByClassName("space-img");
 var imgCount = 12;
 var angle = 360 / imgCount;
@@ -31,7 +34,7 @@ function positioned(start, oval) {
             arrImg[start + l].style.top = "35%";
             arrImg[start + l].style.left = "35%";
         }
-        else{
+        else {
             arrImg[start + l].style.top = "39%";
             arrImg[start + l].style.left = "39%";
         }
@@ -53,7 +56,7 @@ inpCont.addEventListener("blur", function () {
 
 var arrInpPas = document.getElementsByClassName("inp-password");
 
-var btnSend = document.getElementsByClassName("btn-send")[0];
+var btnSend = inpCont.getElementsByClassName("btn-send")[0];
 btnSend.onclick = function () {
     if (utoa(arrInpPas[0].value + arrInpPas[1].value + arrInpPas[2].value) !== ke) {
         for (var i = 0; i < arrInpPas.length; i++) {
@@ -68,18 +71,24 @@ btnSend.onclick = function () {
         }, 600); //600
     }
     else {
-        console.log("Ура!");
+        custAlert.classList.remove("hide");
+        contAlert.classList.remove("hide");
+        var custAlertArr = custAlert.children;
+        custAlertArr[0].innerHTML = "Всё верно! Вы молодцы! Запомните введённые цифры";
+        // bootbox.alert("sgsrgrs", function () {
+        //     console.log("Ура!");
+        // })
         // window.location.href = "/ordeal.html";
     }
 };
 
 for (var z = 0; z < arrInpPas.length - 1; z++) {
-	(function(z){
-		arrInpPas[z].onkeyup = function () {
-        if (this.value.length === 1)
-            arrInpPas[z+1].focus()
+    (function (z) {
+        arrInpPas[z].onkeyup = function () {
+            if (this.value.length === 1)
+                arrInpPas[z + 1].focus()
         };
-	})(z)
+    })(z)
 }
 
 arrInpPas[arrInpPas.length - 1].onkeyup = function () {
@@ -120,9 +129,10 @@ function turnOnFind() {
             if (x > x1 && x < x2 && y > y1 && y < y2) {
                 el1.style.borderRadius = el2.style.borderRadius = "50%";
                 el1.style.boxShadow = el2.style.boxShadow = "0px 0px 31px 16px white";
-				 count++;
-                 if (count === 3) allFind();
-				el1.onclick = el2.onclick = function (e) {}
+                count++;
+                if (count === 3) allFind();
+                el1.onclick = el2.onclick = function (e) {
+                }
             }
         };
     }
