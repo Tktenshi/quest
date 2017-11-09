@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.libra {
+    background-image: url('/img/libra.png');
+    background-repeat: no-repeat;
+    width: 700px;
+    height: 700px;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.libra-block {
+    width: 250px;
+    height: 150px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding-bottom: 30px;
+}
+
+.arrow {
+    background-image: url("/img/arrow.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 400px;
+    width: 200px;
+    margin-top: 113px;
+}
+
+#left {
+    top: 285px;
+    left: 40px;
+}
+
+#right {
+    top: 285px;
+    left: -40px;
+}
+
+.blocks {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.block {
+    width: 50px;
+    height: 50px;
+    background-color: #7db9a9;
+    margin-left: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+}
+
+.drag-start {
+    border-radius: 50px;
+    opacity: .2;
+    background-color: #ecf0f1;
+}
+
+.over {
+    opacity: .7;
+}

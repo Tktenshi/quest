@@ -73,9 +73,10 @@ btnSend.onclick = function () {
     else {
 
         var btn_text = "Перейти к следующему испытанию";
-        var message = "Всё верно! Вы молодцы! Запомните введённые цифры";
+        var message = "Всё верно! Вы молодцы! Запомните введённую комбинацию";
         myAlert(message, btn_text, function () {
-            console.log("Ура!")
+            console.log("Ура!");
+            window.location.href = '/libra.html';
         });
         // window.location.href = "/ordeal.html";
     }
