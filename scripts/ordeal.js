@@ -142,7 +142,7 @@ function turnOnFind() {
         changeImgContSize(13.6);
         positioned();
     }
-}
+} 
 
 
 // positionAt(el1, "top", document.getElementById(123));
