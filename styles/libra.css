@@ -5,8 +5,15 @@
     align-items: center;
 }
 
+.container-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .libra {
-    background-image: url('/img/libra.png');
+    background-image: url('../img/libra.png');
     background-repeat: no-repeat;
     width: 700px;
     height: 700px;
@@ -29,7 +36,7 @@
 }
 
 .arrow {
-    background-image: url("/img/arrow.png");
+    /*background-image: url("../img/arrow.png");*/
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -49,11 +56,17 @@
 }
 
 .blocks {
-    margin-top: 50px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 30px;
+    min-width: 55px;
+    min-height: 440px;
+}
+
+.menu {
+    margin-top: 20px;
 }
 
 .block {
@@ -65,6 +78,7 @@
     cursor: pointer;
     text-align: center;
     line-height: 50px;
+    border-radius: 50%;
 }
 
 .drag-start {
@@ -75,4 +89,8 @@
 
 .over {
     opacity: .7;
+}
+
+.cust-alert {
+   width: 22rem;
 }
