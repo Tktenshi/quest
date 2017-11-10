@@ -92,5 +92,6 @@
 }
 
 .cust-alert {
-   width: 22rem;
+   width: 23rem !important;
+    height: 12rem !important;
 }

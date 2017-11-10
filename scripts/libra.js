@@ -18,16 +18,17 @@ $blocks.addEventListener('dragover', handleDragOver, false);
 var currentSide = false;
 
 var counts = 0;
+var MAXCOUNTS = 2;
 
 var initBlocks = function () {
-    var targetBlock = randomInteger(0,5);
+    var targetBlock = randomInteger(0, 5);
     for (var i = 0; i < 8; i++) {
         var block = document.createElement('div');
         block.classList.add('block');
         block.setAttribute('weight', targetBlock === i ? '1.1' : '1');
-        block.setAttribute('block-num', (i+1) + '');
+        block.setAttribute('block-num', (i + 1) + '');
         block.setAttribute('draggable', 'true');
-        block.innerHTML = '<span>'+ (i+1) +'</span>';
+        block.innerHTML = '<span>' + (i + 1) + '</span>';
         block.addEventListener('dragstart', handleDragStart, false);
         block.addEventListener('dragend', handleDragEnd, false);
         block.addEventListener('drop', handleDrop, false);
@@ -96,23 +97,29 @@ function randomInteger(min, max) {
     return rand;
 }
 
-function displayBlocks(displayNone){
+function displayBlocks(displayNone) {
     var blocks = document.querySelectorAll('.libra .block');
     for (var i = 0; i < blocks.length; i++) {
         blocks[i].style.display = displayNone ? 'none' : '';
     }
     blocks = document.querySelectorAll('.blocks .block');
     for (i = 0; i < blocks.length; i++) {
-        blocks[i].style.display =  displayNone ? 'none' : '';
+        blocks[i].style.display = displayNone ? 'none' : '';
     }
 }
 
+var btnWeigh = document.querySelector('#btnWeigh');
+function renameBtn() {
+    counts <= MAXCOUNTS && (btnWeigh.innerHTML = "ВЗВЕСИТЬ (" + (MAXCOUNTS - counts) + ")");
+}
+
 function check() {
-    if(counts >= 2) {
-        alert('Попытки закончились! Введите номер шара который тяжелее и нажмите отправить ответ');
+    counts++;
+    renameBtn();
+    if (counts > MAXCOUNTS) {
+        alert("Попытки закончились! Введите номер шара который тяжелее и нажмите 'Проверить ответ'");
         return;
     }
-    counts ++;
     var leftSum = 0, rightSum = 0;
 
     var blocks = document.querySelectorAll('#left .block');
@@ -125,7 +132,7 @@ function check() {
         rightSum += +blocks[i].getAttribute('weight');
     }
     console.log(leftSum, rightSum);
-    if(leftSum > rightSum){
+    if (leftSum > rightSum) {
         alert('левая тяжелее')
     } else if (leftSum === rightSum) {
         alert('равны')
@@ -134,24 +141,26 @@ function check() {
     }
 }
 
-function tryAgain(){
+function tryAgain() {
     alert('Ответ не верный. Попробуйте еще раз =)');
+    document.querySelector('#code').value = "";
     var blocks = document.querySelectorAll('.block');
     for (var i = 0; i < blocks.length; i++) {
         blocks[i].parentNode.removeChild(blocks[i]);
     }
     initBlocks();
     counts = 0;
+    renameBtn();
 }
 
-function answer(){
+function answer() {
     var code = document.querySelector('#code').value;
-    if(code){
+    if (code) {
         var blocks = document.querySelectorAll('.block');
         for (var i = 0; i < blocks.length; i++) {
-            if(blocks[i].getAttribute('block-num') == code && +blocks[i].getAttribute('weight') > 1){
+            if (blocks[i].getAttribute('block-num') == code && +blocks[i].getAttribute('weight') > 1) {
                 console.log(blocks[i].getAttribute('weight'));
-                alert ('Верно! Нужная Вам цифра - 2');
+                alert('Верно! Нужная Вам цифра - 2');
                 return;
             }
         }
@@ -162,11 +171,11 @@ function answer(){
 }
 
 var contAlert = null, custAlert = null;
-function alert1 (text, cb) {
+function alert1(text, cb) {
     contAlert = document.querySelector('.cont-alert');
     custAlert = document.querySelector('.cust-alert');
-    if(contAlert) contAlert.style.display = '';
-    if(custAlert) custAlert.style.display = '';
+    if (contAlert) contAlert.style.display = '';
+    if (custAlert) custAlert.style.display = '';
     var btn_text = "OK";
     myAlert(text, btn_text, function () {
         contAlert = document.querySelector('.cont-alert');
@@ -177,11 +186,13 @@ function alert1 (text, cb) {
     });
 }
 
-function rules(){
+function rules() {
     var btn_text = "Понятно";
-    var message = "Среди этих шаров спрятался один, который немного тяжелее других. <br>" +
-        "Необходимо найти это шар за <b>2 взвешивания</b>. Чтобы взвесить просто перетащите шар на чашу весов.";
-    myAlert(message, btn_text, function () {
+    var message = "Среди шаров слева, спрятался один, который немного тяжелее других. <br>" +
+        "Необходимо найти это шар <b>за 2 взвешивания</b> и ввести его номер. Чтобы взвесить, просто перетащите шар(ы) на чашу весов и нажмите 'ВЗВЕСИТЬ'.";
+    myAlert(message, btn_text, function (el) {
         //window.location.href = '/libra.html';
+        // console.log(el);
+        el.parentNode.removeChild(el);
     });
 }
