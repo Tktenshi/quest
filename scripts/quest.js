@@ -37,6 +37,6 @@ document.getElementsByClassName("btn-send")[0].onclick = function () {
         }, 600); //600
     }
     else {
-        window.location.href = "/ordeal.html";
+        window.location.href = "ordeal.html";
     }
 };

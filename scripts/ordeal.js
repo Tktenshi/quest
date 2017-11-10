@@ -76,7 +76,7 @@ btnSend.onclick = function () {
         var message = "Всё верно! Вы молодцы! Запомните введённую комбинацию";
         myAlert(message, btn_text, function () {
             console.log("Ура!");
-            window.location.href = '/libra.html';
+            window.location.href = 'libra.html';
         });
         // window.location.href = "/ordeal.html";
     }
@@ -142,7 +142,7 @@ function turnOnFind() {
         changeImgContSize(13.6);
         positioned();
     }
-} 
+}
 
 
 // positionAt(el1, "top", document.getElementById(123));
