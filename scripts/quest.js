@@ -1,6 +1,6 @@
 var main = document.getElementById("quest");
 document.getElementsByClassName("quest_el audio")[0].volume = 0.5;
-var an = "JUQwJUJFJUQxJTgyJUQwJUIyJUQwJUI1JUQxJTgy";
+var an = "JUQwJUJEJUQwJUIwJUQwJUJCJUQwJUI4JUQwJUIyJUQwJUIwJUQxJThG";
 
 function rand(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
