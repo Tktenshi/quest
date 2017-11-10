@@ -6,7 +6,7 @@
 }
 
 .libra {
-    background-image: url('/img/libra.png');
+    background-image: url('img/libra.png');
     background-repeat: no-repeat;
     width: 700px;
     height: 700px;
@@ -29,7 +29,7 @@
 }
 
 .arrow {
-    background-image: url("/img/arrow.png");
+    background-image: url("img/arrow.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
